@@ -1,0 +1,19 @@
+server.port: 8080
+
+bot:
+  check:
+    initialDelay: 60000
+    fixedDelay: 60000
+
+foreman:
+  baseUrl: https://dashboard.foreman.mn
+  apiUrl: https://api.foreman.mn
+
+google:
+  chatScope: https://www.googleapis.com/auth/chat.bot
+  bucket: fill_this_in
+  credentialOauthScope: https://www.googleapis.com/auth/cloud-platform
+  resourceStream: fill_me_in
+
+notifications:
+  max: 10
