@@ -65,6 +65,7 @@ public class EventController {
                             output);
                     break;
                 case "MESSAGE":
+                    String response = "";
                     Optional<String> validCommandOpt = this.commandRouter
                             .messageEvent(event);
                     if (validCommandOpt.isPresent()) {
@@ -121,7 +122,8 @@ public class EventController {
         } else {
             addedReply = "Invalid space type. I can only work in a room or DM.";
         }
-
+        addedReply += ". To begin, type the */start* command, or type */help*" +
+                      " to see all available commands.";
         return addedReply;
     }
 
@@ -145,7 +147,6 @@ public class EventController {
                     GoogleNetHttpTransport.newTrustedTransport(),
                     GsonFactory.getDefaultInstance(),
                     this.requestInitializer)
-                    .setApplicationName("Foreman-Bot")
                     .build();
             chatService
                     .spaces()

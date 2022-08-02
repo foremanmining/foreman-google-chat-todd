@@ -11,9 +11,9 @@ foreman:
 
 google:
   chatScope: https://www.googleapis.com/auth/chat.bot
-  bucket: fill_this_in
+  bucket: dev-william-foreman-g-chat-bot
   credentialOauthScope: https://www.googleapis.com/auth/cloud-platform
-  resourceStream: fill_me_in
+  #resourceStream: C:\Users\WilliamHoward\Desktop\service-acct.json
 
 notifications:
   max: 10

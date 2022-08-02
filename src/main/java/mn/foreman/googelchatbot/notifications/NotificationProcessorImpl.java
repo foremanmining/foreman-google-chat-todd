@@ -218,7 +218,6 @@ public class NotificationProcessorImpl
                     GoogleNetHttpTransport.newTrustedTransport(),
                     GsonFactory.getDefaultInstance(),
                     this.requestInitializer)
-                    .setApplicationName("basic-async-bot-java")
                     .build();
             chatService
                     .spaces()

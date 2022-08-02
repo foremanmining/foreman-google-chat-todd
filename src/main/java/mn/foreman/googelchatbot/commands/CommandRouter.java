@@ -34,7 +34,7 @@ public class CommandRouter {
     public Optional<String> messageEvent(
             final JsonNode event)
             throws IOException {
-        String response = "";
+        String response = null;
         String rest = "";
         String text = "";
         String spaceId = "";
