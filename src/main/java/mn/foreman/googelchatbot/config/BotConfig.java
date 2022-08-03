@@ -1,6 +1,5 @@
 package mn.foreman.googelchatbot.config;
 
-import mn.foreman.googelchatbot.BotMain;
 import mn.foreman.googelchatbot.commands.*;
 import mn.foreman.googelchatbot.session.GoogleStorageRepository;
 import mn.foreman.googelchatbot.session.SessionRepository;
@@ -19,10 +18,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.time.Instant;
 import java.util.Map;
 
@@ -34,7 +30,6 @@ public class BotConfig {
     public Bucket bucket(
             @Value("${google.bucket}") final String bucketName,
             final Storage storage) {
-
         return storage.get(bucketName);
     }
 
@@ -67,6 +62,7 @@ public class BotConfig {
     public CommandRouter commandRouter(final Map<String, CommandHandler> commandMap) {
         return new CommandRouter(commandMap);
     }
+
     // Production code
     @Bean
     public GoogleCredentials googleCredentials(
@@ -84,6 +80,7 @@ public class BotConfig {
                 .findAndRegisterModules()
                 .registerModule(new JavaTimeModule());
     }
+
     // Production code
     @Bean
     public HttpRequestInitializer requestInitializer(

@@ -8,10 +8,20 @@ import java.util.Optional;
 /** The storage repository for the {@link Session}. */
 public interface SessionRepository {
 
-    /** Deletes a blob from the bucket. */
+    /**
+     * Deletes a blob from the bucket.
+     *
+     * @param spaceId the space that the user is communicating from
+     */
     void delete(String spaceId);
 
-    /* Finds all sessions */
+    /**
+     * Finds all sessions
+     *
+     * @return returns a list of all (@link Session}s
+     *
+     * @throws IOException on failure.
+     */
     List<Session> findAll() throws IOException;
 
     /**

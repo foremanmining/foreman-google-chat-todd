@@ -12,10 +12,11 @@ public interface NotificationsProcessor {
      * necessary.
      *
      * @param session Provides the users credentials.
+     * @param sessionRepository the repository for sessions.
      *
      * @throws IOException on failure.
      */
     void process(
             Session session,
-            SessionRepository sessionRepositoryRepository) throws IOException;
+            SessionRepository sessionRepository) throws IOException;
 }

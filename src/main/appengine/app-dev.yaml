@@ -1,3 +1,4 @@
+#Development app.yaml file only must be specified to use during app engine deployment
 #Just using the default service for app engine
 runtime: java11
 instance_class: F1
